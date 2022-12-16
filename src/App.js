@@ -100,7 +100,6 @@ class App extends Component {
     this.setState({
       initialState
     });
-    this.onRouteChange("signin");
   };
 
   onGetCourses = () => {
@@ -196,7 +195,7 @@ class App extends Component {
           onRouteChange={this.onRouteChange}
           resetState={this.resetState}
         />
-        {this.state.openModal ? (
+        {this.state.openModal && this.state.isSignedIn === true ? (
           <Modal
             getCourses={this.onGetCourses}
             coursesToDelete={this.state.coursesToDelete}
