@@ -100,6 +100,7 @@ class App extends Component {
     this.setState({
       initialState
     });
+    this.onRouteChange("signin");
   };
 
   onGetCourses = () => {
