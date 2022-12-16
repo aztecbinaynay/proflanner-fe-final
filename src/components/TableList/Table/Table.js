@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
@@ -7,9 +8,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
 import "tachyons";
 import TableMenu from "./TableMenu/TableMenu.js";
 import "./Table.css";
@@ -36,14 +34,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-// ----------- examples pre-states-------------------------------------------------
-// const topics = ["topic 1", "topic 2", "topic 3", "topic 4", "topic 5"];
-// const ILOs = ["ILO 3", "ILO 4", "ILO 5"];
-// const TLAs = ["TLA 1", "TLA 2", "TLA 4", "TLA 5"];
-// const ATs = ["AT 1", "AT 2", "AT 3", "AT 4", "AT 5"];
-// const Remarks = ["Remarks 1", "Remarks 2", "Remarks 3"];
-// const rows = [topics, ILOs, TLAs, ATs, Remarks];
-// // ----------- examples pre-states-------------------------------------------------
 
 export default function CustomizedTables({
   KEY,
@@ -78,36 +68,24 @@ export default function CustomizedTables({
 
   function onInputSubmitFromTableMenu(input, id) {
     setInputAndId([input, id]);
-    // console.log("from Table", input, id, weeks);
-    // if (id === "topics") {
-    //   setTopicsArr([...topicsArr, input]);
-    // } else if (id === "ilos") {
-    //   setILOsArr([...ILOsArr, input]);
-    // } else if (id === "tlas") {
-    //   setTLAsArr([...TLAsArr, input]);
-    // } else if (id === "ats") {
-    //   setATsArr([...ATsArr, input]);
-    // } else if (id === "remarks") {
-    //   setRemarksArr([...RemarksArr, input]);
-    // }
-    // console.log("outside effect")
   }
 
   const [inputAndId, setInputAndId] = useState([]);
 
   useEffect(() => {
-    if (inputAndId[1] === "topics") {
-      setTopicsArr([...topicsArr, inputAndId[0]]);
-    } else if (inputAndId[1] === "ilos") {
-      setILOsArr([...ILOsArr, inputAndId[0]]);
-    } else if (inputAndId[1] === "tlas") {
-      setTLAsArr([...TLAsArr, inputAndId[0]]);
-    } else if (inputAndId[1] === "ats") {
-      setATsArr([...ATsArr, inputAndId[0]]);
-    } else if (inputAndId[1] === "remarks") {
-      setRemarksArr([...RemarksArr, inputAndId[0]]);
-    }
-  }, [inputAndId]);
+		if (inputAndId[1] === "topics") {
+			setTopicsArr([...topicsArr, inputAndId[0]]);
+		} else if (inputAndId[1] === "ilos") {
+			setILOsArr([...ILOsArr, inputAndId[0]]);
+		} else if (inputAndId[1] === "tlas") {
+			setTLAsArr([...TLAsArr, inputAndId[0]]);
+		} else if (inputAndId[1] === "ats") {
+			setATsArr([...ATsArr, inputAndId[0]]);
+		} else if (inputAndId[1] === "remarks") {
+			setRemarksArr([...RemarksArr, inputAndId[0]]);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [inputAndId]);
 
   const [topicsArr, setTopicsArr] = useState(topics);
 
@@ -115,39 +93,44 @@ export default function CustomizedTables({
     if (inputAndId[0] !== undefined) {
       onUpdate(topicsArr, inputAndId[1], weeks);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicsArr]);
 
   const [ILOsArr, setILOsArr] = useState(ilos);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(ILOsArr, inputAndId[1], weeks);
-    }
-  }, [ILOsArr]);
+		if (inputAndId[0] !== undefined) {
+			onUpdate(ILOsArr, inputAndId[1], weeks);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [ILOsArr]);
 
   const [TLAsArr, setTLAsArr] = useState(tlas);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(TLAsArr, inputAndId[1], weeks);
-    }
-  }, [TLAsArr]);
+		if (inputAndId[0] !== undefined) {
+			onUpdate(TLAsArr, inputAndId[1], weeks);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [TLAsArr]);
 
   const [ATsArr, setATsArr] = useState(ats);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(ATsArr, inputAndId[1], weeks);
-    }
-  }, [ATsArr]);
+		if (inputAndId[0] !== undefined) {
+			onUpdate(ATsArr, inputAndId[1], weeks);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [ATsArr]);
 
   const [RemarksArr, setRemarksArr] = useState(remarks);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(RemarksArr, inputAndId[1], weeks);
-    }
-  }, [RemarksArr]);
+		if (inputAndId[0] !== undefined) {
+			onUpdate(RemarksArr, inputAndId[1], weeks);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [RemarksArr]);
 
   return (
     <div className="ma3">

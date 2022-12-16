@@ -11,7 +11,7 @@ import ErrorBoundry from "./components/ErrorBoundry/ErrorBoundry.js";
 import Modal from "./components/Modal/Modal.js";
 import TableList from "./components/TableList/TableList.js";
 import ParticlesBg from "particles-bg";
-import MetaData from "./compoents/MetaData/MetaData.js";
+import MetaData from "./components/MetaData/MetaData.js";
 
 const initialState = {
   route: "signin",
