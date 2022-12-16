@@ -125,8 +125,10 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if (route === "signin") {
-      this.setState({ isSignedIn: false });
-      this.resetState();
+      this.setState({ isSignedIn: false }, () => {
+        this.onOpenModal(false, "");
+        this.resetState();
+      });
     } else if (route === "home") {
       this.setState({ isSignedIn: true });
     }
@@ -154,7 +156,7 @@ class App extends Component {
 
   onOpenModal = (event, modalKind) => {
     this.setState({ openModal: event });
-    this.setState({ modalKind: modalKind });
+    this.setState({ modalKind: modalKind});
     this.setState({ searchfield: "" });
   };
 
