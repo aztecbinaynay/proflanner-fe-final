@@ -24,26 +24,40 @@ export default function BasicPopover({ text, InputSubmitFromTableMenu }) {
   }
 
   return (
-    <div>
-      <div className = "dt" aria-describedby={id} variant="contained" onClick={handleClick}>
-      {text === "text" ? (
-        <><TextFieldsIcon className = "dtc" color="secondary" /><p>n/a</p></> //not yet implemented
-      ) : (
-        <FormatListBulletedIcon className = "dtc" color="primary" />
-      )} <p className = "dtc" >| {text}</p>
-      </div>
-      <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
-        }}
-      >
-        <TableAdd InputSubmit={onInputSubmit} onPopOverState={handleClose} defaultval={text} />
-      </Popover>
-    </div>
-  );
+		<div>
+			<div
+				className="dt"
+				aria-describedby={id}
+				variant="contained"
+				onClick={handleClick}
+			>
+				{/* {text === "text" ? (
+					<>
+						<TextFieldsIcon className="dtc" color="secondary" />
+						<p>n/a</p>
+					</> //not yet implemented
+				) : (
+					<FormatListBulletedIcon className="dtc" color="primary" />
+				)}{" "} */}
+				<FormatListBulletedIcon className="dtc" color="primary" />
+				<p className="dtc">{text}</p>
+			</div>
+			<Popover
+				id={id}
+				open={open}
+				anchorEl={anchorEl}
+				onClose={handleClose}
+				anchorOrigin={{
+					vertical: "bottom",
+					horizontal: "left",
+				}}
+			>
+				<TableAdd
+					InputSubmit={onInputSubmit}
+					onPopOverState={handleClose}
+					defaultval={text}
+				/>
+			</Popover>
+		</div>
+	);
 }

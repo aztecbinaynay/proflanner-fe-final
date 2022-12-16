@@ -34,9 +34,10 @@ export default function PositionedMenu({ id, InputSubmitFromTableMenu }) {
   }, [anchorEl]);
 
   useEffect(() => {
-    console.log("type of input inside TableMenu", anchorEl2);
-    console.log(id);
-  }, [anchorEl2]);
+		console.log("type of input inside TableMenu", anchorEl2);
+		console.log(id);
+		//eslint-disable-next-line
+	}, [anchorEl2]);
 
   return (
     <div style={{ height: "auto", width: "auto" }}>
@@ -65,14 +66,14 @@ export default function PositionedMenu({ id, InputSubmitFromTableMenu }) {
           horizontal: "left",
         }}
       >
-        <MenuItem
+        {/* <MenuItem
           onClick={(ev) => {
             onTypeofInput("text");
           }}
           onClose={handleClose}
         >
           <PopoverTableAdd text={"text"} />
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem
           onClick={(ev) => {
             onTypeofInput("list");
