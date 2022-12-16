@@ -46,24 +46,27 @@ export default function CustomizedTables({
   remarks,
 }) {
   function onUpdate(input, id, weeks) {
-    fetch("http://localhost:6060/course/lessonplanner/update", {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        textArr: input,
-        typeInput: id,
-        id: KEY,
-        weeks: weeks,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.length !== 0) {
-          console.log("success", data);
-        } else {
-          alert("error: " + data);
-        }
-      });
+    fetch(
+			"https://modest-bike-production.up.railway.app/course/lessonplanner/update",
+			{
+				method: "put",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					textArr: input,
+					typeInput: id,
+					id: KEY,
+					weeks: weeks,
+				}),
+			}
+		)
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.length !== 0) {
+					console.log("success", data);
+				} else {
+					alert("error: " + data);
+				}
+			});
   }
 
   function onInputSubmitFromTableMenu(input, id) {
