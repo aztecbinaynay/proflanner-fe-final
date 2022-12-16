@@ -1,0 +1,13 @@
+.Tilt {
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  height: auto;
+  background: linear-gradient(to right, #74b8a6, #0442252c);
+}
+
+
+img {
+  width: inherit;
+  height: inherit;
+}

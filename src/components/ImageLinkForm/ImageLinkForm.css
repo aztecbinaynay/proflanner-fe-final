@@ -1,0 +1,10 @@
+.form {
+  width: 500px;
+}
+
+.pattern {
+  background-color: #1b8012;
+  opacity: 0.8;
+  background-size: 32px 32px;
+  background-image: repeating-linear-gradient(to right, #be9a11, #be9a11 1.6px, #1b8012 1.6px, #1b8012);
+}

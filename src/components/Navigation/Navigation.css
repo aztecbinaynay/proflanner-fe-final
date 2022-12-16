@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0;
+  margin: 0;
+  padding-right: 3vw;
+  background: linear-gradient(to right, #e00be0bd, #0ec2e2d8);
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 1vw;
+  cursor: pointer;
+}

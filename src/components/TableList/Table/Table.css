@@ -1,0 +1,33 @@
+.headerCell {
+  /* display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  grid-auto-flow: column; */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 4px;
+  grid-auto-flow: column;
+  /* width: fit-content; */
+  height: 40px;
+}
+
+.headerCell > p {
+  display: inline-grid;
+  margin: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  padding-left: 25px;
+  border-right: 1px solid navy;
+  height: 100%;
+  position: relative;
+}
+
+.hrForPlanner {
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
+}

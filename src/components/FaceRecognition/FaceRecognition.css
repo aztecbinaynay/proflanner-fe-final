@@ -1,0 +1,6 @@
+img {
+  width: 500px;
+  /* adjust height based on the width */
+  height: auto;
+}
+

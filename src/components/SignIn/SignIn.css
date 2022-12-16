@@ -1,0 +1,14 @@
+article {
+  position: absolute;
+  top: 45%;
+  left: 50vw;
+  right: 50vw;
+  transform: translate(-50%, -50%);
+  background: rgba(31, 206, 54, 0.349);
+    box-shadow: 4px 4px 8px 0 rgb(8, 193, 218)
+  }
+
+  hr {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }

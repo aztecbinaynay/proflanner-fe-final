@@ -1,0 +1,168 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background: url(background.jpg);
+    background-size: cover;
+}
+.outerBox{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56); 
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56);
+    background: #A27B5C;
+    width: 1650px;
+    height: 750px;
+    padding: 50px;
+    position: relative;
+    margin: 50px;
+    border-radius: 10px;
+}
+.innerBox{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56); 
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56);
+    background: #DCD7C9;
+    position: absolute;
+    width: 30%;
+    height: 85%;
+    /* Originally 85% */
+    left: 5%; 
+    margin: 15px;
+    border-radius: 10px;
+}
+.box{
+    width: 450px;
+    height: 400px;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: #aa8282; */
+    text-align: center;
+    border-radius: 10px;
+}
+.box h1
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.box input[type="text"], .box input[type="password"]
+{
+    border: 0px;
+    background: none;
+    display: block;
+    margin: 20px;
+    text-align: left;
+    background-color: white;
+    /* Adjust the size according to the Figma */
+    padding: 14px 10px;
+    width: 300px;
+    /*  */
+    outline: none;
+    color: black;
+    border-radius: 4px;
+    transition: 0.25px;
+}
+label
+{
+    display: inline-block;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+input
+{
+    width: 13px;
+    /* height: 13px; */
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+.box input[type="submit"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    background-color: #3F4E4F;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.box input[type="submit"]:hover
+{
+    background: #d6ab1dec;
+}
+
+/* .box{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56); 
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56);
+    width:400px;
+    height:400px;
+    padding:50px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: #A27B5C;
+    text-align:center;
+    border-radius: 10px;
+}
+.box h1
+{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.box input[type="text"], .box input[type="password"]
+{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56); 
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56);
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #0367fd;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25px;
+}
+.box input[type="text"]:focus, .box input[type="password"]:focus
+{
+    width: 230px;
+    border-color: #ffc400ec;
+}
+.box input[type="submit"]
+{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56); 
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.56);
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ffc400ec;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.box input[type="submit"]:hover
+{
+    background: #ffc400ec;
+} */

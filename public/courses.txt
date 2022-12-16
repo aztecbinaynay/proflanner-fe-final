@@ -1,0 +1,211 @@
+Calculus 1
+Discrete Mathematics
+Chemistry for Engineers
+Computer Engineering as a Discipline
+Programming Logic and Design
+Computer System Administration and Troubleshooting
+Computer-Aided Drafting
+Understanding the Self
+Physocal Education 1
+National Service Training Program 1
+Calculus 2
+Linear Algebra with MATLAB
+Engineering Data Analysis
+Calculus-Based Physics
+Object Oriented Programming
+General Education Elective 1
+Mathematics in the Modern World
+Physical Education 2
+National Service Training Program 2
+Differential Equations
+Fundamentals of Electronic Circuits
+Fundamentals of Electrical Circuits
+Data Structures and Algorithms
+Database Management System
+Introduction to Engineering Entrepreneurship
+Engineering Economics
+Data and Digital Communications
+Physical Education 3
+Numerical Methods
+Logic Circuits and Design
+Computer Engineering Drafting and Design
+Embedded Systems
+Computer Networks 1
+Cognate / Elective Course 1
+Art Appreciation
+Physical Education 4
+General Education Elective 2
+Optimization Techniques
+Introduction to HDL
+Feedback and Control Systems
+Fundamentals of Mixed Signals and Sensors
+Computer Networks 2
+Cognate / Elective Course 2
+The Contemporary World
+Life and Works of Rizal
+Emerging Technologies 1 in CpE
+Methods of Research
+Computer Architecture and Organization
+Operating Systems
+Cognate / Elective Course 3
+Computer Networks 3
+Introduction to Intellectual Property
+Science, Technology, and Society
+Emerging Technologies 2 in CpE
+CpE Laws and Professional Practice
+Basic Occupational Health and Safety
+Readings in Philippine History
+Ethics
+Emerging Technologies 3 in CpE
+Microprocessor Systems
+Software Design
+Digital Signal Processing and Application
+General Education Elective 3
+Developing Applications and Automation
+CpE Design Project 1
+Plant Visits and Seminars for CPE
+Purposive Communication
+CpE Design Project 2
+On-the-Job- Training for CpE
+
+MATH 016
+MATH 006
+CHEM 001C
+CPE 008
+CPE 007
+CPE 201A
+CPE 003
+GEC 001
+PE 001
+NSTP 001
+MATH 017
+MATH 013
+MATH 019A
+PHYS 001C
+CPE 009
+GEE 001
+GEC 004
+PE 002
+NSTP 002
+MATH 010
+ECE 027
+EE 041
+CPE 010
+CPE 011
+TECH 101
+EECO 001
+CPE 012
+PE 003
+MATH 020
+CPE 013
+CPE 304
+CPE 014
+CPE 302
+CPE Elective 1
+GEC 006
+PE 004
+GEE 002
+CPE 015
+CPE 016
+ECE 028
+CPE 017
+CPE 401
+CPE Elective 2
+GEC 003
+SOCSC 005
+CPE 018
+CPE 020
+CPE 021
+CPE 022
+CPE Elective 3
+CPE 404
+COE 002A
+GEC 007
+CPE 019
+CPE 023
+CPE 024
+GEC 002
+GEC 008
+CPE 026
+CPE 006
+CPE 025
+CPE 027
+GEE 003
+CPE 028
+CPE 029
+CPE 502
+GEC 005
+CPE 030
+CPE 500
+
+const course = [
+    "Calculus 1",
+    "Discrete Mathematics",
+    "Chemistry for Engineers",
+    "Computer Engineering as a Discipline",
+    "Programming Logic and Design",
+    "Computer System Administration and Troubleshooting",
+    "Computer-Aided Drafting",
+    "Understanding the Self",
+    "Physocal Education 1",
+    "National Service Training Program 1",
+    "Calculus 2",
+    "Linear Algebra with MATLAB",
+    "Engineering Data Analysis",
+    "Calculus-Based Physics",
+    "Object Oriented Programming",
+    "General Education Elective 1",
+    "Mathematics in the Modern World",
+    "Physical Education 2",
+    "National Service Training Program 2",
+    "Differential Equations",
+    "Fundamentals of Electronic Circuits",
+    "Fundamentals of Electrical Circuits",
+    "Data Structures and Algorithms",
+    "Database Management System",
+    "Introduction to Engineering Entrepreneurship",
+    "Engineering Economics",
+    "Data and Digital Communications",
+    "Physical Education 3",
+    "Numerical Methods",
+    "Logic Circuits and Design",
+    "Computer Engineering Drafting and Design",
+    "Embedded Systems",
+    "Computer Networks 1",
+    "Cognate / Elective Course 1",
+    "Art Appreciation",
+    "Physical Education 4",
+    "General Education Elective 2",
+    "Optimization Techniques",
+    "Introduction to HDL",
+    "Feedback and Control Systems",
+    "Fundamentals of Mixed Signals and Sensors",
+    "Computer Networks 2",
+    "Cognate / Elective Course 2",
+    "The Contemporary World",
+    "Life and Works of Rizal",
+    "Emerging Technologies 1 in CpE",
+    "Methods of Research",
+    "Computer Architecture and Organization",
+    "Operating Systems",
+    "Cognate / Elective Course 3",
+    "Computer Networks 3",
+    "Introduction to Intellectual Property",
+    "Science, Technology, and Society",
+    "Emerging Technologies 2 in CpE",
+    "CpE Laws and Professional Practice",
+    "Basic Occupational Health and Safety",
+    "Readings in Philippine History",
+    "Ethics",
+    "Emerging Technologies 3 in CpE",
+    "Microprocessor Systems",
+    "Software Design",
+    "Digital Signal Processing and Applications",
+    "General Education Elective 3",
+    "Developing Applications and Automation",
+    "CpE Design Project 1",
+    "Plant Visits and Seminars for CPE",
+    "Purposive Communication",
+    "CpE Design Project 2",
+    "On-the-Job- Training for CpE",
+  ];

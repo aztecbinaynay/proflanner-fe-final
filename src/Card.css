@@ -1,0 +1,32 @@
+.smaller {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+img {
+  flex: 0 0 32%;
+  height: auto;
+  width: 500px;
+}
+
+.innerDiv {
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: scroll; 
+  text-overflow: ellipsis;
+  -ms-overflow-style: none;
+    /* IE and Edge */
+  scrollbar-width: none;
+    /* Firefox */
+}
+
+.innerDiv::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+p {
+  font-size: 17px;
+  margin: 0;
+}
