@@ -18,7 +18,7 @@ function Modal({
     .map((course) => {
       return course.course;
     })
-    .flat()
+    .flat();
 
   const modularity = ["full", "modular"];
   const labhrs = ["0", "1", "2", "3", "4", "5", "6"];
@@ -33,7 +33,7 @@ function Modal({
   const [startDate, setStartDate] = useState("");
 
   function onDeleteCourse() {
-    fetch("https://modest-bike-production.up.railway.app/deletecourse", {
+    fetch("http://localhost:6060/deletecourse", {
       method: "delete",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -54,7 +54,7 @@ function Modal({
   }
 
   function onCreateCourse() {
-    fetch("https://modest-bike-production.up.railway.app/createlesson", {
+    fetch("http://localhost:6060/createlesson", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

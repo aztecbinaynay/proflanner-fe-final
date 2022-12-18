@@ -7,7 +7,7 @@ const TableList = ({ coursesToOpen }) => {
   const [tableInfo, setTableInfo] = useState([]);
 
   useEffect(() => {
-    fetch(`https://modest-bike-production.up.railway.app/course/lessonplanner/${coursesToOpen}`)
+    fetch(`http://localhost:6060/course/lessonplanner/${coursesToOpen}`)
       .then((response) => {
         return response.json();
       })

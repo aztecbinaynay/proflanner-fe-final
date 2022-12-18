@@ -34,7 +34,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-
 export default function CustomizedTables({
   KEY,
   ID,
@@ -46,27 +45,24 @@ export default function CustomizedTables({
   remarks,
 }) {
   function onUpdate(input, id, weeks) {
-    fetch(
-			"https://modest-bike-production.up.railway.app/course/lessonplanner/update",
-			{
-				method: "put",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					textArr: input,
-					typeInput: id,
-					id: KEY,
-					weeks: weeks,
-				}),
-			}
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.length !== 0) {
-					console.log("success", data);
-				} else {
-					alert("error: " + data);
-				}
-			});
+    fetch("http://localhost:6060/course/lessonplanner/update", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        textArr: input,
+        typeInput: id,
+        id: KEY,
+        weeks: weeks,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length !== 0) {
+          console.log("success", data);
+        } else {
+          alert("error: " + data);
+        }
+      });
   }
 
   function onInputSubmitFromTableMenu(input, id) {
@@ -76,19 +72,19 @@ export default function CustomizedTables({
   const [inputAndId, setInputAndId] = useState([]);
 
   useEffect(() => {
-		if (inputAndId[1] === "topics") {
-			setTopicsArr([...topicsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "ilos") {
-			setILOsArr([...ILOsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "tlas") {
-			setTLAsArr([...TLAsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "ats") {
-			setATsArr([...ATsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "remarks") {
-			setRemarksArr([...RemarksArr, inputAndId[0]]);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [inputAndId]);
+    if (inputAndId[1] === "topics") {
+      setTopicsArr([...topicsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "ilos") {
+      setILOsArr([...ILOsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "tlas") {
+      setTLAsArr([...TLAsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "ats") {
+      setATsArr([...ATsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "remarks") {
+      setRemarksArr([...RemarksArr, inputAndId[0]]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputAndId]);
 
   const [topicsArr, setTopicsArr] = useState(topics);
 
@@ -102,38 +98,38 @@ export default function CustomizedTables({
   const [ILOsArr, setILOsArr] = useState(ilos);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(ILOsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ILOsArr]);
+    if (inputAndId[0] !== undefined) {
+      onUpdate(ILOsArr, inputAndId[1], weeks);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ILOsArr]);
 
   const [TLAsArr, setTLAsArr] = useState(tlas);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(TLAsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [TLAsArr]);
+    if (inputAndId[0] !== undefined) {
+      onUpdate(TLAsArr, inputAndId[1], weeks);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [TLAsArr]);
 
   const [ATsArr, setATsArr] = useState(ats);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(ATsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ATsArr]);
+    if (inputAndId[0] !== undefined) {
+      onUpdate(ATsArr, inputAndId[1], weeks);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ATsArr]);
 
   const [RemarksArr, setRemarksArr] = useState(remarks);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(RemarksArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [RemarksArr]);
+    if (inputAndId[0] !== undefined) {
+      onUpdate(RemarksArr, inputAndId[1], weeks);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [RemarksArr]);
 
   return (
     <div className="ma3">
@@ -291,7 +287,9 @@ export default function CustomizedTables({
                           }
                           setTLAsArr([...TLAsArr]);
                         }}
-                      >x</button>
+                      >
+                        x
+                      </button>
                     </li>
                   );
                 })}
@@ -314,7 +312,9 @@ export default function CustomizedTables({
                           }
                           setATsArr([...ATsArr]);
                         }}
-                      >x</button>
+                      >
+                        x
+                      </button>
                     </li>
                   );
                 })}

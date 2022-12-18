@@ -78,7 +78,7 @@ class App extends Component {
 
   //dev mode only to bypas signin
   // autoSignIn = () => {
-  //   fetch("https://modest-bike-production.up.railway.app//signin", {
+  //   fetch("http://localhost:6060/signin", {
   //     method: "post",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify({
@@ -98,12 +98,12 @@ class App extends Component {
 
   resetState = () => {
     this.setState({
-      initialState
+      initialState,
     });
   };
 
   onGetCourses = () => {
-    fetch(`https://modest-bike-production.up.railway.app/courses/${this.state.user.email}`)
+    fetch(`http://localhost:6060/courses/${this.state.user.email}`)
       .then((response) => {
         return response.json();
       })
@@ -113,7 +113,7 @@ class App extends Component {
   };
 
   onCourseCodes() {
-    fetch("https://modest-bike-production.up.railway.app/modal/courses")
+    fetch("http://localhost:6060/modal/courses")
       .then((response) => {
         return response.json();
       })
@@ -156,7 +156,7 @@ class App extends Component {
 
   onOpenModal = (event, modalKind) => {
     this.setState({ openModal: event });
-    this.setState({ modalKind: modalKind});
+    this.setState({ modalKind: modalKind });
     this.setState({ searchfield: "" });
   };
 
