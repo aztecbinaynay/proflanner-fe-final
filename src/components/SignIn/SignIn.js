@@ -2,6 +2,8 @@ import React from "react";
 import "./SignIn.css";
 import { TextField } from "@mui/material";
 import profLanner from "../Logo/logo_transparent_.png";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class SignIn extends React.Component {
     this.state = {
       signInEmail: "",
       signInPassword: "",
+      error: ""
     };
   }
 
@@ -35,6 +38,10 @@ class SignIn extends React.Component {
           this.props.loadUser(user);
           // this.props.getCourses();
           this.props.onRouteChange("home");
+          this.setState({error:""})
+        }
+        else{
+          this.setState({error: "error"})
         }
       });
   };
@@ -112,22 +119,21 @@ class SignIn extends React.Component {
                 />
               </div>
             </fieldset>
-            <div className="">
-              <input
-                onClick={this.onSubmitSignIn}
-                className="b ph3 pv2 input-reset ba b--dark-green bg-transparent grow dim pointer f6 dib"
-                type="submit"
-                value="Sign in"
-              />
-            </div>
-            <div className="lh-copy mt3">
-              <p
-                onClick={() => this.props.onRouteChange("register")}
-                className="f6 link dim black db pointer"
-              >
-                Register
-              </p>
-            </div>
+            {this.state.error === "error" ? (
+                  <p style={{color: "red", marginBottom: "25px"}}>ERROR: UNABLE TO SIGN IN</p>
+                ):(" ")}
+            <Stack spacing={2} direction="row">
+              <Button 
+              style = {{background: "rgb(245, 89, 11)"}}
+              variant="contained"
+              onClick={this.onSubmitSignIn}
+              >sign in</Button>
+            <Button 
+            style = {{color: "rgb(245, 89, 11)"}}
+            variant="text"
+            onClick={() => this.props.onRouteChange("register")}
+            >Register</Button>
+            </Stack>
           </div>
         </main>
       </article>

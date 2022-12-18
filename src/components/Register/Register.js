@@ -1,6 +1,8 @@
 import React from "react";
 import "./Register.css";
 import profLanner from "../Logo/logo_transparent_.png";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 class Register extends React.Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class Register extends React.Component {
       email: "",
       password: "",
       name: "",
+      error: ""
     };
   }
 
@@ -39,7 +42,11 @@ class Register extends React.Component {
         if (user.id) {
           this.props.loadUser(user);
           // this.props.getCourses();
+          this.setState({error:""});
           this.props.onRouteChange("home");
+        }
+        else{
+          this.setState({error:"error"});
         }
       });
   };
@@ -112,22 +119,25 @@ class Register extends React.Component {
                 />
               </div>
             </fieldset>
-            <div className="">
-              <input
+            {this.state.error === "error" ? (
+                  <p style={{color: "red", marginBottom: "25px"}}>ERROR: UNABLE TO REGISTER</p>
+                ):(" ")}
+            <Stack spacing={2} direction="row">
+              <Button
                 onClick={this.onSubmitSignIn}
-                className="b ph3 pv2 input-reset ba b--dark-green bg-transparent grow pointer f6 dib"
-                type="submit"
-                value="Register"
-              />
-            </div>
-            <div className="lh-copy mt3">
-              <p
+                style={{ background: "rgb(245, 89, 11)" }}
+                variant="contained"
+              >
+                Register
+              </Button>
+              <Button
                 onClick={() => this.props.onRouteChange("signin")}
-                className="f6 link dim black db pointer"
+                style={{ color: "rgb(245, 89, 11)" }}
+                variant="text"
               >
                 Sign in
-              </p>
-            </div>
+              </Button>
+            </Stack>
           </div>
         </main>
       </article>
