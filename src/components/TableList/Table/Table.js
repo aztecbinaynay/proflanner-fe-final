@@ -12,7 +12,7 @@ import "tachyons";
 import TableMenu from "./TableMenu/TableMenu.js";
 import { useState, useEffect } from "react";
 import "./Table.css";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -66,6 +66,7 @@ export default function CustomizedTables({
   }
 
   function onInputSubmitFromTableMenu(input, id) {
+    console.log("input and id", input, " ", id);
     setInputAndId([input, id]);
   }
 
@@ -89,45 +90,40 @@ export default function CustomizedTables({
   const [topicsArr, setTopicsArr] = useState(topics);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(topicsArr, inputAndId[1], weeks);
-    }
+      onUpdate(topicsArr, "topics", weeks);
+    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicsArr]);
 
   const [ILOsArr, setILOsArr] = useState(ilos);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(ILOsArr, inputAndId[1], weeks);
-    }
+      onUpdate(ILOsArr, "ilos", weeks);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ILOsArr]);
 
   const [TLAsArr, setTLAsArr] = useState(tlas);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(TLAsArr, inputAndId[1], weeks);
-    }
+    
+      onUpdate(TLAsArr, "tlas", weeks);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [TLAsArr]);
 
   const [ATsArr, setATsArr] = useState(ats);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(ATsArr, inputAndId[1], weeks);
-    }
+    onUpdate(ATsArr, "ats", weeks);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ATsArr]);
 
   const [RemarksArr, setRemarksArr] = useState(remarks);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(RemarksArr, inputAndId[1], weeks);
-    }
+      onUpdate(RemarksArr, "remarks", weeks);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [RemarksArr]);
 
@@ -230,7 +226,7 @@ export default function CustomizedTables({
                     <li>
                       {topic}{" "}
                       <Button
-                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
                         variant="text"
                         color="warning"
                         onClick={() => {
@@ -258,9 +254,9 @@ export default function CustomizedTables({
                     <li>
                       {ILO}{" "}
                       <Button
-                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
-                      variant = "text"
-                      color = "warning"            
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = ILOsArr.indexOf(ILO);
                           if (index > -1) {
@@ -286,9 +282,9 @@ export default function CustomizedTables({
                     <li>
                       {TLA}{" "}
                       <Button
-                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
-                      variant = "text"
-                      color = "warning" 
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = TLAsArr.indexOf(TLA);
                           if (index > -1) {
@@ -314,9 +310,9 @@ export default function CustomizedTables({
                     <li>
                       {AT}{" "}
                       <Button
-                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
-                      variant = "text"
-                      color = "warning" 
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = ATsArr.indexOf(AT);
                           if (index > -1) {
@@ -341,10 +337,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {Remark}{" "}
-                      <Button 
-                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
-                      variant = "text"
-                      color = "warning" 
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = RemarksArr.indexOf(Remark);
                           if (index > -1) {
