@@ -55,7 +55,11 @@ const CardList = ({
             key={user.id}
             id={user.id}
             name={user.course}
-            email={user.email}
+            modularity={user.modularity}
+            gradingyear={user.gradingyear}
+            gradingsem={user.gradingsem}
+            lechrs = {user.lechrs}
+            labhrs = {user.labhrs}
             ClickedCourses={onClickedCourses}
             // onClick={onClick(user.id)}
           />

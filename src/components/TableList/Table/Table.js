@@ -146,7 +146,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div className="headerCell">
-                  <p>Topics</p>
+                  <p style={{color: "rgb(255 255 255)"}}>Topics</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"topics"}
@@ -161,7 +161,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>ILOs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>ILOs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"ilos"}
@@ -176,7 +176,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>TLAs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>TLAs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"tlas"}
@@ -191,7 +191,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>ATs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>ATs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"ats"}
@@ -206,7 +206,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>Remarks</p>
+                  <p style={{color: "rgb(255 255 255)"}}>Remarks</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"remarks"}

@@ -10,7 +10,8 @@ nav {
   padding-top: 0;
   margin: 0;
   padding-right: 3vw;
-  background: linear-gradient(to right, #e00be0bd, #0ec2e2d8);
+  /* background: linear-gradient(to right, #e00be0bd, #0ec2e2d8); */
+  background: rgb(0, 0, 0);
 }
 
 p {

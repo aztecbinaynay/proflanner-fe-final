@@ -6,14 +6,16 @@ const Navigation = ({ onRouteChange, isSignedIn, route }) => {
       <nav style={{ display: "flex", justifyContent: "flex-end" }}>
         { route === "planner" &&
         <p
+        style={{color: "#dd1818"}}
           onClick={() => onRouteChange("home")}
-          className="link dim black underline pa3 pointer"
+          className="link dim underline pa3 pointer"
         >
           Dashboard
         </p>}
         <p
+        style={{color: "#dd1818"}}
           onClick={() => onRouteChange("signin")}
-          className="link dim black underline pa3 pointer"
+          className="link dim underline pa3 pointer"
         >
           Sign Out
         </p>
@@ -23,14 +25,16 @@ const Navigation = ({ onRouteChange, isSignedIn, route }) => {
       return (
         <nav style={{ display: "flex", justifyContent: "flex-end" }}>
           <p
+          style={{color: "#dd1818"}}
             onClick={() => onRouteChange("signin")}
-            className="link dim black underline pa3 pointer"
+            className="link dim underline pa3 pointer"
           >
             Sign In
           </p>
           <p
+          style={{color: "#dd1818"}}
             onClick={() => onRouteChange("register")}
-            className="link dim black underline pa3 pointer"
+            className="link dim underline pa3 pointer"
           >
             Register
           </p>

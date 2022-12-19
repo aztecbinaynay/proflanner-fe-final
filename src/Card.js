@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import "tachyons";
 // path to picture cannot be outsode of src?
 
-const Card = ({ name, email, id, deleteMode, ClickedCourses }) => {
+const Card = ({ name, modularity,gradingyear, gradingsem, lechrs, labhrs, id, deleteMode, ClickedCourses }) => {
   // const { name, email, id } = props;
   const [clicked, setClicked] = useState(false);
   // const [clcikedCourses, setClickedCourses] = useState([]);
@@ -47,7 +47,10 @@ const Card = ({ name, email, id, deleteMode, ClickedCourses }) => {
       <hr />
       <div className="tl innerDiv">
         <p>{name}</p>
-        <p>{email}</p>
+        <p>modularity: {modularity}</p>
+        <p>year/sem: {gradingyear}/{gradingsem}</p>
+        <p>lecture hours: {lechrs}</p>
+        <p>laboratory hours: {labhrs}</p>
       </div>
     </div>
   );

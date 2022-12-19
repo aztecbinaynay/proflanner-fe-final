@@ -5,7 +5,7 @@ article {
   right: 50vw;
   transform: translate(-50%, -50%);
   /* background: rgba(31, 206, 54, 0.349); */
-  background-image: linear-gradient(rgb(51, 87, 5),rgb(255, 255, 255));
+  background-image: linear-gradient(rgb(58, 95, 12),rgba(255, 255, 255, 0.801));
     box-shadow: 4px 4px 8px 0 rgb(8, 193, 218)
   }
 
