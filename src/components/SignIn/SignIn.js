@@ -54,7 +54,7 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 shadow-5 center">
+      <article className="br3 mv4 w-100 w-50-m w-25-l mw5 shadow-5 center">
         <main className="pa3 black-80">
           <img
             style={{ width: "250px", height: "80px", objectFit: "cover" }}
@@ -122,7 +122,7 @@ class SignIn extends React.Component {
             {this.state.error === "error" ? (
                   <p style={{color: "red", marginBottom: "25px"}}>ERROR: UNABLE TO SIGN IN</p>
                 ):(" ")}
-            <Stack spacing={2} direction="row">
+            <Stack spacing={2} direction="column">
               <Button 
               style = {{background: "rgb(245, 89, 11)"}}
               variant="contained"

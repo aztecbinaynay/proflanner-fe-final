@@ -10,9 +10,9 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "tachyons";
 import TableMenu from "./TableMenu/TableMenu.js";
-import "./Table.css";
 import { useState, useEffect } from "react";
 import "./Table.css";
+import Button from '@mui/material/Button';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -229,7 +229,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {topic}{" "}
-                      <button
+                      <Button
+                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = topicsArr.indexOf(topic);
                           if (index > -1) {
@@ -239,7 +242,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -254,7 +257,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {ILO}{" "}
-                      <button
+                      <Button
+                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                      variant = "text"
+                      color = "warning"            
                         onClick={() => {
                           const index = ILOsArr.indexOf(ILO);
                           if (index > -1) {
@@ -264,7 +270,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -279,7 +285,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {TLA}{" "}
-                      <button
+                      <Button
+                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                      variant = "text"
+                      color = "warning" 
                         onClick={() => {
                           const index = TLAsArr.indexOf(TLA);
                           if (index > -1) {
@@ -289,7 +298,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -304,7 +313,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {AT}{" "}
-                      <button
+                      <Button
+                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                      variant = "text"
+                      color = "warning" 
                         onClick={() => {
                           const index = ATsArr.indexOf(AT);
                           if (index > -1) {
@@ -314,7 +326,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -329,7 +341,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {Remark}{" "}
-                      <button
+                      <Button 
+                      sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                      variant = "text"
+                      color = "warning" 
                         onClick={() => {
                           const index = RemarksArr.indexOf(Remark);
                           if (index > -1) {
@@ -339,7 +354,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}

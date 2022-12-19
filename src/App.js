@@ -12,6 +12,7 @@ import Modal from "./components/Modal/Modal.js";
 import TableList from "./components/TableList/TableList.js";
 import ParticlesBg from "particles-bg";
 import MetaData from "./components/MetaData/MetaData.js";
+import "./App.css"
 
 const initialState = {
   route: "signin",
@@ -176,7 +177,9 @@ class App extends Component {
     });
 
     return (
-      <div className="App">
+      <div
+        className="App"
+      >
         <ParticlesBg
           className="particles"
           bg={true}
