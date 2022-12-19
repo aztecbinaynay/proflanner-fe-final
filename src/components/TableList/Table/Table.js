@@ -10,9 +10,9 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "tachyons";
 import TableMenu from "./TableMenu/TableMenu.js";
-import "./Table.css";
 import { useState, useEffect } from "react";
 import "./Table.css";
+import Button from "@mui/material/Button";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,7 +34,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-
 export default function CustomizedTables({
   KEY,
   ID,
@@ -46,94 +45,87 @@ export default function CustomizedTables({
   remarks,
 }) {
   function onUpdate(input, id, weeks) {
-    fetch(
-			"https://modest-bike-production.up.railway.app/course/lessonplanner/update",
-			{
-				method: "put",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					textArr: input,
-					typeInput: id,
-					id: KEY,
-					weeks: weeks,
-				}),
-			}
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.length !== 0) {
-					console.log("success", data);
-				} else {
-					alert("error: " + data);
-				}
-			});
+    fetch("https://modest-bike-production.up.railway.app/course/lessonplanner/update", {
+      method: "put",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        textArr: input,
+        typeInput: id,
+        id: KEY,
+        weeks: weeks,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length !== 0) {
+          console.log("success", data);
+        } else {
+          alert("error: " + data);
+        }
+      });
   }
 
   function onInputSubmitFromTableMenu(input, id) {
+    console.log("input and id", input, " ", id);
     setInputAndId([input, id]);
   }
 
   const [inputAndId, setInputAndId] = useState([]);
 
   useEffect(() => {
-		if (inputAndId[1] === "topics") {
-			setTopicsArr([...topicsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "ilos") {
-			setILOsArr([...ILOsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "tlas") {
-			setTLAsArr([...TLAsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "ats") {
-			setATsArr([...ATsArr, inputAndId[0]]);
-		} else if (inputAndId[1] === "remarks") {
-			setRemarksArr([...RemarksArr, inputAndId[0]]);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [inputAndId]);
+    if (inputAndId[1] === "topics") {
+      setTopicsArr([...topicsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "ilos") {
+      setILOsArr([...ILOsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "tlas") {
+      setTLAsArr([...TLAsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "ats") {
+      setATsArr([...ATsArr, inputAndId[0]]);
+    } else if (inputAndId[1] === "remarks") {
+      setRemarksArr([...RemarksArr, inputAndId[0]]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputAndId]);
 
   const [topicsArr, setTopicsArr] = useState(topics);
 
   useEffect(() => {
-    if (inputAndId[0] !== undefined) {
-      onUpdate(topicsArr, inputAndId[1], weeks);
-    }
+      onUpdate(topicsArr, "topics", weeks);
+    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicsArr]);
 
   const [ILOsArr, setILOsArr] = useState(ilos);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(ILOsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ILOsArr]);
+      onUpdate(ILOsArr, "ilos", weeks);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ILOsArr]);
 
   const [TLAsArr, setTLAsArr] = useState(tlas);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(TLAsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [TLAsArr]);
+    
+      onUpdate(TLAsArr, "tlas", weeks);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [TLAsArr]);
 
   const [ATsArr, setATsArr] = useState(ats);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(ATsArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ATsArr]);
+    onUpdate(ATsArr, "ats", weeks);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ATsArr]);
 
   const [RemarksArr, setRemarksArr] = useState(remarks);
 
   useEffect(() => {
-		if (inputAndId[0] !== undefined) {
-			onUpdate(RemarksArr, inputAndId[1], weeks);
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [RemarksArr]);
+      onUpdate(RemarksArr, "remarks", weeks);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [RemarksArr]);
 
   return (
     <div className="ma3">
@@ -154,7 +146,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div className="headerCell">
-                  <p>Topics</p>
+                  <p style={{color: "rgb(255 255 255)"}}>Topics</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"topics"}
@@ -169,7 +161,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>ILOs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>ILOs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"ilos"}
@@ -184,7 +176,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>TLAs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>TLAs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"tlas"}
@@ -199,7 +191,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>ATs</p>
+                  <p style={{color: "rgb(255 255 255)"}}>ATs</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"ats"}
@@ -214,7 +206,7 @@ export default function CustomizedTables({
                 align="center"
               >
                 <div class="headerCell">
-                  <p>Remarks</p>
+                  <p style={{color: "rgb(255 255 255)"}}>Remarks</p>
                   <TableMenu
                     InputSubmitFromTableMenu={onInputSubmitFromTableMenu}
                     id={"remarks"}
@@ -233,7 +225,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {topic}{" "}
-                      <button
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = topicsArr.indexOf(topic);
                           if (index > -1) {
@@ -243,7 +238,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -258,7 +253,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {ILO}{" "}
-                      <button
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = ILOsArr.indexOf(ILO);
                           if (index > -1) {
@@ -268,7 +266,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
@@ -283,7 +281,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {TLA}{" "}
-                      <button
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = TLAsArr.indexOf(TLA);
                           if (index > -1) {
@@ -291,7 +292,9 @@ export default function CustomizedTables({
                           }
                           setTLAsArr([...TLAsArr]);
                         }}
-                      >x</button>
+                      >
+                        x
+                      </Button>
                     </li>
                   );
                 })}
@@ -306,7 +309,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {AT}{" "}
-                      <button
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = ATsArr.indexOf(AT);
                           if (index > -1) {
@@ -314,7 +320,9 @@ export default function CustomizedTables({
                           }
                           setATsArr([...ATsArr]);
                         }}
-                      >x</button>
+                      >
+                        x
+                      </Button>
                     </li>
                   );
                 })}
@@ -329,7 +337,10 @@ export default function CustomizedTables({
                   return (
                     <li>
                       {Remark}{" "}
-                      <button
+                      <Button
+                        sx={{ minHeight: 0, minWidth: 0, padding: 0 }}
+                        variant="text"
+                        color="warning"
                         onClick={() => {
                           const index = RemarksArr.indexOf(Remark);
                           if (index > -1) {
@@ -339,7 +350,7 @@ export default function CustomizedTables({
                         }}
                       >
                         x
-                      </button>
+                      </Button>
                     </li>
                   );
                 })}
